@@ -1,6 +1,4 @@
 import pytest
-import types
-import sys
 
 from smart_clicker.player import ScenarioPlayer
 
@@ -64,9 +62,7 @@ def test_run_step_keys_uses_send_keys(monkeypatch):
         def set_focus(self):
             return None
 
-    fake_pywinauto = types.ModuleType("pywinauto")
-    fake_pywinauto.keyboard = types.SimpleNamespace(send_keys=sent.append)
-    monkeypatch.setitem(sys.modules, "pywinauto", fake_pywinauto)
+    monkeypatch.setattr(player, "_send_keys", sent.append)
     player._resolve_target = lambda window, step_target: Target()
     player._run_step(object(), {"action": "keys", "keys": "{ENTER}", "target": {}}, {})
     assert sent == ["{ENTER}"]

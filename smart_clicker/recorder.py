@@ -183,3 +183,4 @@ class ScenarioRecorder:
         self._hook = Hook()
         self._hook.handler = self._on_event
         self._hook.hook(keyboard=True, mouse=True)
+        save_scenario(self.out_path, self.builder.scenario)

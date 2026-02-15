@@ -55,6 +55,12 @@ class ScenarioPlayer:
         parent = self._descend_path(window_wrapper, (target or {}).get("path"))
         return parent.child_window(**_safe_selector(target)).wrapper_object()
 
+    @staticmethod
+    def _send_keys(text):
+        from pywinauto import keyboard as pw_keyboard
+
+        pw_keyboard.send_keys(text)
+
     def _run_step(self, window_wrapper, step, run_values):
         action = step["action"]
         if action == "wait":
@@ -64,9 +70,7 @@ class ScenarioPlayer:
         if action == "keys":
             target = self._resolve_target(window_wrapper, step["target"])
             target.set_focus()
-            from pywinauto import keyboard as pw_keyboard
-
-            pw_keyboard.send_keys(step["keys"])
+            self._send_keys(step["keys"])
             return
         target = self._resolve_target(window_wrapper, step["target"])
         if action == "click":
@@ -75,12 +79,9 @@ class ScenarioPlayer:
             text = render_template(step.get("value", ""), run_values)
             try:
                 target.set_edit_text(text)
-                target.type_keys(text, with_spaces=True, set_foreground=True)
             except Exception:
                 target.set_focus()
-                from pywinauto import keyboard as pw_keyboard
-
-                pw_keyboard.send_keys(text)
+                self._send_keys(text)
         else:
             raise ValueError(f"Unsupported action: {action}")
 
