@@ -1,0 +1,157 @@
+name: scenario_1
+app_title: null
+params:
+- param_001
+steps:
+- id: step_002
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: чё делаем.txt – Блокнот
+  target:
+    automation_id: '15'
+    name: Текстовый редактор
+    control_type: Edit
+    class_name: Edit
+    path:
+    - name: чё делаем.txt – Блокнот
+      control_type: Window
+      class_name: Notepad
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 592
+    - 488
+    - 2490
+    - 1490
+- id: step_003
+  action: type
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: ${param_001}
+  window:
+    title_contains: чё делаем.txt – Блокнот
+  target:
+    automation_id: '15'
+    name: Текстовый редактор
+    control_type: Edit
+    class_name: Edit
+    path:
+    - name: чё делаем.txt – Блокнот
+      control_type: Window
+      class_name: Notepad
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 592
+    - 488
+    - 2490
+    - 1490
+- id: step_004
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: чё делаем.txt – Блокнот
+  target:
+    automation_id: null
+    name: Файл
+    control_type: MenuItem
+    class_name: null
+    path:
+    - name: Приложение
+      control_type: MenuBar
+      class_name: null
+      automation_id: MenuBar
+    - name: чё делаем.txt – Блокнот
+      control_type: Window
+      class_name: Notepad
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 592
+    - 458
+    - 655
+    - 487
+- id: step_005
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: чё делаем.txt – Блокнот
+  target:
+    automation_id: '3'
+    name: "Сохранить\tCTRL+S"
+    control_type: MenuItem
+    class_name: null
+    path:
+    - name: Файл
+      control_type: Menu
+      class_name: '#32768'
+      automation_id: null
+    - name: чё делаем.txt – Блокнот
+      control_type: Window
+      class_name: Notepad
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 3
+    bbox:
+    - 595
+    - 595
+    - 1034
+    - 630
+- id: step_006
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: чё делаем.txt – Блокнот
+  target:
+    automation_id: null
+    name: Закрыть
+    control_type: Button
+    class_name: null
+    path:
+    - name: null
+      control_type: TitleBar
+      class_name: null
+      automation_id: null
+    - name: чё делаем.txt – Блокнот
+      control_type: Window
+      class_name: Notepad
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 2
+    bbox:
+    - 2420
+    - 414
+    - 2491
+    - 458

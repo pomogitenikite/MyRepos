@@ -1,0 +1,104 @@
+============================================================
+Waiting for Long Operations
+============================================================
+
+A GUI application behaviour is often unstable and your script needs 
+waiting until a new window appears or an existing window is closed/hidden. 
+pywinauto can flexibly wait for a dialog initialization implicitly 
+(with the default timeout) or explicitly using dedicated 
+methods/functions that could help you to make your code easier 
+and more reliable.
+
+Application methods
+-------------------
+
+  * wait_cpu_usage_lower_ (new in pywinauto 0.5.2, renamed in 0.6.0)
+
+This method is useful for multi-threaded interfaces that allow a lazy 
+initialization in another thread while GUI is responsive and all controls 
+already exist and seems ready to use. So waiting for a specific window existence/state 
+is useless. In such case the CPU usage for the whole process indicates that a task 
+calculation is not finished yet.
+
+Example: ::
+
+    app.wait_cpu_usage_lower(threshold=5) # wait until CPU usage is lower than 5%
+
+NOTE: this method is available for the whole application process only, not for a window/element.
+
+WindowSpecification methods
+---------------------------
+
+These methods are available to all controls.
+
+  * wait_
+  * wait_not_
+
+There is an example containing long waits: `install script for 7zip 9.20 x64
+<https://gist.github.com/vasily-v-ryabov/7a04717af4584cbb840f>`_.
+
+A ``WindowSpecification`` object isn't necessarily related to an existing window/control.
+It's just a description namely a couple of criteria to search the window. The ``wait`` method (if no any exception is raised) 
+can guarantee that the target control exists or even visible, enabled and/or active.
+
+Functions in ``timings`` module
+-------------------------------
+
+There are also low-level methods useful for any Python code.
+
+  * wait_until_
+  * wait_until_passes_
+
+
+.. _wait: code/pywinauto.application.html?highlight=wait#pywinauto.application.WindowSpecification.wait
+.. _wait_not: code/pywinauto.application.html?highlight=wait_not#pywinauto.application.WindowSpecification.wait_not
+.. _wait_cpu_usage_lower: code/pywinauto.application.html?highlight=wait_cpu_usage_lower#pywinauto.application.Application.wait_cpu_usage_lower
+.. _wait_until: code/pywinauto.timings.html?highlight=wait_until#pywinauto.timings.wait_until
+.. _wait_until_passes: code/pywinauto.timings.html?highlight=wait_until_passes#pywinauto.timings.wait_until_passes
+
+
+Decorators :func:`pywinauto.timings.always_wait_until()` and
+:func:`pywinauto.timings.always_wait_until_passes()` can also be used
+if every function call should have timing control. ::
+
+    # call ensure_text_changed(ctrl) every 2 sec until it's passed or timeout (4 sec) is expired
+    
+    @always_wait_until_passes(4, 2)
+    def ensure_text_changed(ctrl):
+        if previous_text == ctrl.window_text():
+            raise ValueError('The ctrl text remains the same while change is expected')
+
+
+Global timings for all actions
+------------------------------
+
+Many actions require some pause before, after and in-between. There are several 
+global constants in module ``timings`` defining such pauses. It can be aligned 
+for your needs individually by setting global static variables in object 
+``timings.Timings``.
+
+All global timings can be set to default at once, or doubled, or divided by two: ::
+
+    from timings import Timings
+    
+    Timings.defaults()
+    Timings.slow() # double all timings (~2x slower script execution)
+    Timings.fast() # divide all timings by two (~2x faster)
+
+
+Identify controls
+-----------------
+
+The methods to help you to find a needed control.
+
+  * print_control_identifiers_
+  * draw_outline_
+
+
+.. _print_control_identifiers: code/pywinauto.application.html?highlight=print_control_identifiers#pywinauto.application.WindowSpecification.print_control_identifiers
+.. _draw_outline: code/pywinauto.controls.hwndwrapper.html?highlight=draw_outline#pywinauto.controls.hwndwrapper.HwndWrapper.draw_outline
+
+
+How To`s
+==================
+* :doc:`HowTo`

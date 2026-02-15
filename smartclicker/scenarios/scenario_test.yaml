@@ -1,0 +1,520 @@
+name: scenario_test
+app_title: null
+params:
+- param_001
+- param_002
+- param_003
+- param_004
+steps:
+- id: step_001
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: ПолигонСофт
+  target:
+    automation_id: null
+    name: Сетка
+    control_type: Text
+    class_name: TextBlock
+    path:
+    - name: null
+      control_type: Button
+      class_name: Button
+      automation_id: Mesh
+    - name: ПолигонСофт
+      control_type: Window
+      class_name: Window
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1620
+    - 813
+    - 1725
+    - 843
+- id: step_002
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: Файл
+    control_type: MenuItem
+    class_name: QAction
+    path:
+    - name: null
+      control_type: MenuBar
+      class_name: QMenuBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study1]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 0
+    - 34
+    - 57
+    - 64
+- id: step_003
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: Новый
+    control_type: MenuItem
+    class_name: QtxAction
+    path:
+    - name: null
+      control_type: Menu
+      class_name: QMenu
+      automation_id: null
+    - name: Файл
+      control_type: MenuItem
+      class_name: QAction
+      automation_id: null
+    - name: null
+      control_type: MenuBar
+      class_name: QMenuBar
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 4
+    - 68
+    - 405
+    - 99
+- id: step_004
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study2]
+  target:
+    automation_id: null
+    name: null
+    control_type: ComboBox
+    class_name: QtxComboBox
+    path:
+    - name: Модули
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study2]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 254
+    - 73
+    - 386
+    - 103
+- id: step_005
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study2]
+  target:
+    automation_id: null
+    name: Geometry
+    control_type: ListItem
+    class_name: null
+    path:
+    - name: null
+      control_type: List
+      class_name: QComboBoxListView
+      automation_id: null
+    - name: null
+      control_type: ComboBox
+      class_name: QtxComboBox
+      automation_id: null
+    - name: Модули
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    index_in_parent: 1
+    bbox:
+    - 255
+    - 123
+    - 385
+    - 143
+- id: step_006
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study2]
+  target:
+    automation_id: null
+    name: Проекция на цилиндр
+    control_type: Button
+    class_name: QToolButton
+    path:
+    - name: Преобразование
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study2]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+    - name: Рабочий стол 1
+      control_type: Pane
+      class_name: '#32769'
+      automation_id: null
+    index_in_parent: 8
+    bbox:
+    - 358
+    - 159
+    - 401
+    - 201
+- id: step_007
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Аргументы
+    control_type: Spinner
+    class_name: SalomeApp_DoubleSpinBox
+    path:
+    - name: Аргументы
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: QWidget
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1138
+    - 760
+    - 1539
+    - 788
+- id: step_008
+  action: type
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: ${param_001}
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Аргументы
+    control_type: Spinner
+    class_name: SalomeApp_DoubleSpinBox
+    path:
+    - name: Аргументы
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: QWidget
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1138
+    - 760
+    - 1539
+    - 788
+- id: step_009
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Аргументы
+    control_type: Spinner
+    class_name: SalomeApp_DoubleSpinBox
+    path:
+    - name: Аргументы
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: QWidget
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    index_in_parent: 1
+    bbox:
+    - 1138
+    - 794
+    - 1539
+    - 822
+- id: step_010
+  action: type
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: ${param_002}
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Аргументы
+    control_type: Spinner
+    class_name: SalomeApp_DoubleSpinBox
+    path:
+    - name: Аргументы
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: QWidget
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    index_in_parent: 1
+    bbox:
+    - 1138
+    - 794
+    - 1539
+    - 822
+- id: step_011
+  action: type
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: ${param_003}
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Имя результата
+    control_type: Edit
+    class_name: QLineEdit
+    path:
+    - name: Имя результата
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    - name: Projection On A Cylinder
+      control_type: Window
+      class_name: TransformationGUI_ProjectionOnCylDlg
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1042
+    - 643
+    - 1539
+    - 671
+- id: step_012
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Имя результата
+    control_type: Edit
+    class_name: QLineEdit
+    path:
+    - name: Имя результата
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    - name: Projection On A Cylinder
+      control_type: Window
+      class_name: TransformationGUI_ProjectionOnCylDlg
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1042
+    - 643
+    - 1539
+    - 671
+- id: step_013
+  action: type
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: ${param_004}
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Имя результата
+    control_type: Edit
+    class_name: QLineEdit
+    path:
+    - name: Имя результата
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    - name: Projection On A Cylinder
+      control_type: Window
+      class_name: TransformationGUI_ProjectionOnCylDlg
+      automation_id: null
+    index_in_parent: 0
+    bbox:
+    - 1042
+    - 643
+    - 1539
+    - 671
+- id: step_014
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: Projection On A Cylinder
+  target:
+    automation_id: null
+    name: Закрыть
+    control_type: Button
+    class_name: null
+    path:
+    - name: null
+      control_type: TitleBar
+      class_name: null
+      automation_id: null
+    - name: Projection On A Cylinder
+      control_type: Window
+      class_name: TransformationGUI_ProjectionOnCylDlg
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study2]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+    index_in_parent: 1
+    bbox:
+    - 1492
+    - 473
+    - 1563
+    - 517
+- id: step_015
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study2]
+  target:
+    automation_id: null
+    name: +OZ
+    control_type: Button
+    class_name: QToolButton
+    path:
+    - name: Операции с 3D-видами
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: null
+      control_type: Window
+      class_name: SOCC_ViewWindow
+      automation_id: null
+    - name: null
+      control_type: Custom
+      class_name: QFrame
+      automation_id: null
+    index_in_parent: 11
+    bbox:
+    - 1194
+    - 282
+    - 1237
+    - 324
+- id: step_016
+  action: click
+  comment: null
+  wait_after_ms: 300
+  timeout_ms: null
+  value: null
+  window:
+    title_contains: SALOME 9.12.0 - [Study2]
+  target:
+    automation_id: null
+    name: Show/Hide navigation cube
+    control_type: CheckBox
+    class_name: QToolButton
+    path:
+    - name: Операции с 3D-видами
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: null
+      control_type: Window
+      class_name: SOCC_ViewWindow
+      automation_id: null
+    - name: null
+      control_type: Custom
+      class_name: QFrame
+      automation_id: null
+    index_in_parent: 8
+    bbox:
+    - 678
+    - 282
+    - 721
+    - 324

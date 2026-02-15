@@ -1,0 +1,104 @@
+name: scenario_test1
+steps:
+- id: step_001
+  action: click
+  window:
+    top_title_contains: ПолигонСофт
+  target:
+    automation_id: null
+    name: Сетка
+    control_type: Text
+    class_name: TextBlock
+    path:
+    - name: null
+      control_type: Button
+      class_name: Button
+      automation_id: Mesh
+    - name: ПолигонСофт
+      control_type: Window
+      class_name: Window
+      automation_id: null
+- id: step_002
+  action: click
+  window:
+    top_title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: null
+    control_type: ComboBox
+    class_name: QtxComboBox
+    path:
+    - name: Модули
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study1]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+- id: step_003
+  action: click
+  window:
+    top_title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: Geometry
+    control_type: ListItem
+    class_name: null
+    path:
+    - name: null
+      control_type: List
+      class_name: QComboBoxListView
+      automation_id: null
+    - name: null
+      control_type: ComboBox
+      class_name: QtxComboBox
+      automation_id: null
+    - name: Модули
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study1]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+- id: step_004
+  action: click
+  window:
+    top_title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: Цилиндр
+    control_type: Button
+    class_name: QToolButton
+    path:
+    - name: Примитивы
+      control_type: ToolBar
+      class_name: QtxToolBar
+      automation_id: null
+    - name: SALOME 9.12.0 - [Study1]
+      control_type: Window
+      class_name: STD_TabDesktop
+      automation_id: null
+- id: step_005
+  action: click
+  window:
+    top_title_contains: SALOME 9.12.0 - [Study1]
+  target:
+    automation_id: null
+    name: Применить и Закрыть
+    control_type: Button
+    class_name: QPushButton
+    path:
+    - name: null
+      control_type: Group
+      class_name: QGroupBox
+      automation_id: null
+    - name: null
+      control_type: Group
+      class_name: GEOMBase_DlgSkeleton
+      automation_id: null
+    - name: Построение цилиндра
+      control_type: Window
+      class_name: PrimitiveGUI_CylinderDlg
+      automation_id: null
