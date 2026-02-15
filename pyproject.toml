@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smart_clicker"
+version = "0.1.0"
+description = "Windows UI automation recorder/player based on pywinauto 0.6.8"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "pywinauto==0.6.8",
+  "PyYAML",
+]
+
+[project.scripts]
+smart-clicker = "smart_clicker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
