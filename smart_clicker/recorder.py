@@ -85,18 +85,20 @@ class ScenarioRecorder:
         return root
 
     def _capture_target(self, x, y):
-        from pywinauto import Desktop
+        from pywinauto.controls.uiawrapper import UIAWrapper
+        from pywinauto.uia_element_info import UIAElementInfo
 
-        wrapper = Desktop(backend=self.backend).from_point(x, y)
+        info = UIAElementInfo.from_point(x, y)
+        wrapper = UIAWrapper(info)
         top = wrapper.top_level_parent()
-        target = _selector_from_info(wrapper.element_info)
+        target = _selector_from_info(info)
         path = []
-        parent = wrapper.parent()
+        parent = getattr(info, "parent", None)
         while parent is not None and len(path) < self.max_depth:
-            path.append(_selector_from_info(parent.element_info))
-            if parent.handle == top.handle:
+            path.append(_selector_from_info(parent))
+            if getattr(parent, "control_type", None) == "Window":
                 break
-            parent = parent.parent()
+            parent = getattr(parent, "parent", None)
         if path:
             target["path"] = path
         return top, target
@@ -147,6 +149,7 @@ class ScenarioRecorder:
             self.paused = not self.paused
             return
         if event.current_key == "F9" and event.event_type == "key down":
+            save_scenario(self.out_path, self.builder.scenario)
             self._hook.stop()
             return
         if self.paused or self._dialog_active:
@@ -180,4 +183,3 @@ class ScenarioRecorder:
         self._hook = Hook()
         self._hook.handler = self._on_event
         self._hook.hook(keyboard=True, mouse=True)
-        save_scenario(self.out_path, self.builder.scenario)

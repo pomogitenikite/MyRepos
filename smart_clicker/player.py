@@ -63,14 +63,24 @@ class ScenarioPlayer:
             return
         if action == "keys":
             target = self._resolve_target(window_wrapper, step["target"])
-            target.type_keys(step["keys"], set_foreground=True)
+            target.set_focus()
+            from pywinauto import keyboard as pw_keyboard
+
+            pw_keyboard.send_keys(step["keys"])
             return
         target = self._resolve_target(window_wrapper, step["target"])
         if action == "click":
-            target.click_input()
+            target.click_input(button="left")
         elif action == "type":
             text = render_template(step.get("value", ""), run_values)
-            target.type_keys(text, with_spaces=True, set_foreground=True)
+            try:
+                target.set_edit_text(text)
+                target.type_keys(text, with_spaces=True, set_foreground=True)
+            except Exception:
+                target.set_focus()
+                from pywinauto import keyboard as pw_keyboard
+
+                pw_keyboard.send_keys(text)
         else:
             raise ValueError(f"Unsupported action: {action}")
 
